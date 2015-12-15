@@ -15,6 +15,8 @@ public class Client {
     BufferedReader reader;
     PrintWriter writer;
     Socket socket;
+	
+	private final static String HOST_NAME = "localhost";
 
     Client() {
         JFrame frame = new JFrame("Chat");
@@ -45,7 +47,7 @@ public class Client {
 
     void setUpNetworking() {
         try {
-            socket = new Socket("localhost", 2345);
+            socket = new Socket(HOST_NAME, 2345);
             InputStreamReader isr =
                     new InputStreamReader(socket.getInputStream());
             reader = new BufferedReader(isr);
