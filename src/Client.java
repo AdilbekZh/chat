@@ -48,8 +48,7 @@ public class Client {
     void setUpNetworking() {
         try {
             socket = new Socket(HOST_NAME, 2345);
-            InputStreamReader isr =
-                    new InputStreamReader(socket.getInputStream());
+            InputStreamReader isr = new InputStreamReader(socket.getInputStream());
             reader = new BufferedReader(isr);
             writer = new PrintWriter(socket.getOutputStream());
             System.out.println("Networking estabilished");
